@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import vertexShader from './vertex.glsl'
 import fragmentShader from './fragment.glsl'
+import mapSrc from './mount.jpg';
+import depthSrc from './mount-map.jpg';
 
 class World {
     constructor() {
@@ -11,8 +13,8 @@ class World {
         this.resize()
 
         this.textureLoader = new THREE.TextureLoader();
-        this.map = this.textureLoader.load('./mount.jpg');
-        this.depthMap = this.textureLoader.load('./mount-map.jpg');
+        this.map = this.textureLoader.load(mapSrc);
+        this.depthMap = this.textureLoader.load(depthSrc);
 
         this.addObject()
 
